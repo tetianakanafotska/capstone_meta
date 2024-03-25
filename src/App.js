@@ -1,22 +1,23 @@
+import { Routes, Route } from "react-router-dom";
 import './App.scss';
-import Header from './Header';
-import Banner from './Banner';
-import Highlights from './Highlights';
-import Testimonials from './Testimonials';
-import About from './About';
-import Footer from './Footer';
+import Home from "./pages/Home.js";
+import About from "./pages/About.js";
+import Menu from "./pages/Menu.js";
+import Reservations from "./pages/Reservations.js";
+import OrderOnline from "./pages/OrderOnline.js";
+import Login from "./pages/Login.js";
 
 function App() {
   return (
     <>
-      <Header/>
-      <main>
-        <Banner/>
-        <Highlights/>
-        <Testimonials/>
-        <About/>
-      </main>
-      <Footer/>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/menu" element={<Menu/>}/>
+        <Route path="/reservations" element={<Reservations/>}/>
+        <Route path="/order_online" element={<OrderOnline/>}/>
+        <Route path="/login" element={<Login/>}/>
+      </Routes>
     </>
   );
 }

@@ -1,11 +1,11 @@
 import React from "react";
-import MarioAdrian1 from "./images/MarioAdrian1.jpg";
-import MarioAdrian2 from "./images/MarioAdrian2.jpg"
+import MarioAdrian1 from "../images/MarioAdrian1.jpg";
+import MarioAdrian2 from "../images/MarioAdrian2.jpg"
 
-const Testimonials = () => (
+const Chefs = () => (
             <article className="about">
                 <div>
-                    <h2>About</h2>
+                    <h2>About us</h2>
                     <h4>Little Lemon is owned by two Italian brothers, Mario and Adrian, who moved to the United States to pursue their shared dream of owning a restaurant. To craft the menu, Mario relies on family recipes and his experience as a chef in Italy. Adrian does all the marketing for the restaurant and led the effort to expand the menu beyond classic Italian to incorporate additional cuisines from the Mediterranean region.</h4>
                 </div>
                 <div>
@@ -17,4 +17,4 @@ const Testimonials = () => (
             </article>
     )
 
-export default Testimonials;
+export default Chefs;

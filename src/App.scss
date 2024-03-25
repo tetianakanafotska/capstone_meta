@@ -1,8 +1,11 @@
+// *{
+//   outline: red 1px solid;
+// }
 
 $yellow: #F4CE14;
 $green:#495E57;
 $white: #EDEFEE;
-$grey: #fff;
+$grey: #EDEFEE;
 $black:#333333;
 $peach:#EE9972;
 $peach-light:#FBDABB;
@@ -71,11 +74,13 @@ ul a {
 }
 
 p {
+  font: $paragraph-text;
   line-height: 1.5;
 }
 
 main {
   grid-area: main;
+  width:100vw;
 }
 
 footer {
@@ -104,6 +109,7 @@ h1 {
 
 h2 {
   font: $sub-title;
+  margin-bottom:3rem;
 }
 
 h3 {
@@ -115,6 +121,11 @@ h4 {
   font: $lead-text;
   margin: 1rem 0;
   line-height: 1.5;
+}
+
+h5 {
+  font: $card-title;
+  margin: 0;
 }
 
 .banner {
@@ -129,7 +140,7 @@ h4 {
   border-radius: 16px;
 }
 
-button {
+.mainbutton {
   border-radius: 16px;
   padding: 0.8em 1.5em;
   border: none;
@@ -139,16 +150,26 @@ button {
   margin: 1em 0;
 }
 
+button {
+  border:0;
+}
+
 .highlights {
-  display: flex;
+  position: relative;
   padding: 3em 9rem 5rem 9rem;
   clear: right;
-  justify-content: space-between;
+}
+
+.highlights .mainbutton {
+  position: absolute;
+  top:4em;
+  right:0;
+  margin: 0 9rem 0 0;
 }
 
 .testimonials {
   background-color: $peach-light;
-  padding: 2em 0 9rem 9rem;
+  padding: 2em 9rem 5rem 9rem;
 }
 
 .about {
@@ -169,4 +190,73 @@ button {
   border-radius: 16px;
   position: relative;
   z-index: 0;
+}
+
+.dishcard {
+  display: flex;
+  flex-direction: column;
+  background-color: $grey;
+  margin-right: 1.5rem;
+  border-radius: 16px;
+}
+
+.dishcard button {
+  font: $highlight-text;
+  margin: 0.7rem 1rem 1.5rem 1.5rem;
+  padding-inline: 0;
+}
+
+.dishcard > img {
+  border-radius: 16px;
+}
+
+.bicycleicon {
+  vertical-align: text-bottom;
+  margin-left: 4px;
+}
+
+.dishcard .dishtitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dishtitle p {
+  margin:0;
+  font: $highlight-text;
+  color:$peach;
+}
+
+.dishcard .dishtext {
+  padding: 1.5rem;
+  width:220px;
+  overflow: hidden;
+  height: 163px;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.cardscroll {
+  display: flex;
+  overflow-x:scroll;
+  padding-bottom: 2rem;
+}
+
+.review-profile {
+  display:flex;
+  align-items: center;
+  padding-top:1rem;
+}
+
+.reviewcard {
+  background-color: $white;
+  margin-right:1rem;
+  padding:1.7rem 1.7rem 1.3rem 1.7rem;
+  width: 250px;
+  border-radius: 16px;
+}
+
+.review-profile img{
+  margin-right:1rem;
+  border-radius: 16px;
 }
