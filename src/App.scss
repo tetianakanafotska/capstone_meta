@@ -2,39 +2,39 @@
 //   outline: red 1px solid;
 // }
 
-$yellow: #F4CE14;
-$green:#495E57;
-$white: #EDEFEE;
-$grey: #EDEFEE;
-$black:#333333;
-$peach:#EE9972;
-$peach-light:#FBDABB;
-
+$yellow: #f4ce14;
+$green: #495e57;
+$white: #edefee;
+$grey: #edefee;
+$black: #333333;
+$peach: #ee9972;
+$peach-light: #fbdabb;
 
 $display-title: 500 4rem "Markazi Text", serif;
 $sub-title: normal 2.5rem "Markazi Text", serif;
 $lead-text: 500 1.125rem "Karla";
 $section-title-uppercase: 700 1.25rem "Karla";
 $card-title: 700 1.125rem "Karla";
-$paragraph-text: normal 1rem  "Karla";
-$highlight-text: 500 1rem  "Karla";
+$paragraph-text: normal 1rem "Karla";
+$highlight-text: 500 1rem "Karla";
 
+//Homepage
 
 #root {
   display: grid;
   grid-template-areas:
-  "header"
-  "main"
-  "footer";
+    "header"
+    "main"
+    "footer";
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
   grid-column-gap: 1.5em;
-  font-family: 'Karla';
+  font-family: "Karla";
 }
 
-header, footer {
+header,
+footer {
   padding: 2em 9rem;
-
 }
 
 header {
@@ -43,7 +43,7 @@ header {
   align-items: center;
   font: $section-title-uppercase;
   text-transform: uppercase;
-  color:$black;
+  color: $black;
 }
 
 header ul {
@@ -62,14 +62,14 @@ header img {
 }
 
 ul {
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   list-style-type: none;
 }
 
 ul a {
   text-decoration: none;
-  color:inherit;
+  color: inherit;
   line-height: 1.5;
 }
 
@@ -80,7 +80,7 @@ p {
 
 main {
   grid-area: main;
-  width:100vw;
+  width: 100vw;
 }
 
 footer {
@@ -101,7 +101,7 @@ footer div {
   flex-grow: 2;
 }
 
-h1 {
+.banner h1 {
   font: $display-title;
   margin: 4rem 0 0rem 0;
   color: $yellow;
@@ -109,12 +109,12 @@ h1 {
 
 h2 {
   font: $sub-title;
-  margin-bottom:3rem;
+  margin-bottom: 3rem;
 }
 
 h3 {
   font: $sub-title;
-  margin:0;
+  margin: 0;
 }
 
 h4 {
@@ -151,7 +151,7 @@ h5 {
 }
 
 button {
-  border:0;
+  border: 0;
 }
 
 .highlights {
@@ -162,8 +162,8 @@ button {
 
 .highlights .mainbutton {
   position: absolute;
-  top:4em;
-  right:0;
+  top: 4em;
+  right: 0;
   margin: 0 9rem 0 0;
 }
 
@@ -221,14 +221,14 @@ button {
 }
 
 .dishtitle p {
-  margin:0;
+  margin: 0;
   font: $highlight-text;
-  color:$peach;
+  color: $peach;
 }
 
 .dishcard .dishtext {
   padding: 1.5rem;
-  width:220px;
+  width: 220px;
   overflow: hidden;
   height: 163px;
   display: -webkit-box;
@@ -238,25 +238,37 @@ button {
 
 .cardscroll {
   display: flex;
-  overflow-x:scroll;
+  overflow-x: scroll;
   padding-bottom: 2rem;
 }
 
 .review-profile {
-  display:flex;
+  display: flex;
   align-items: center;
-  padding-top:1rem;
+  padding-top: 1rem;
 }
 
 .reviewcard {
   background-color: $white;
-  margin-right:1rem;
-  padding:1.7rem 1.7rem 1.3rem 1.7rem;
+  margin-right: 1rem;
+  padding: 1.7rem 1.7rem 1.3rem 1.7rem;
   width: 250px;
   border-radius: 16px;
 }
 
-.review-profile img{
-  margin-right:1rem;
+.review-profile img {
+  margin-right: 1rem;
   border-radius: 16px;
+}
+
+//Reservations
+
+form {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
+#reservations {
+  margin: 2vw 30vw;
 }

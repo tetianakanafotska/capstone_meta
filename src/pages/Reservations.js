@@ -1,22 +1,72 @@
-import React, {useState} from "react";
+import React, { useReducer } from "react";
 import BookingForm from "../components/BookingForm";
+import { fetchAPI, submitAPI } from "../mockAPI.js";
+import { useNavigate } from "react-router-dom";
+
+export const initializeTimes = async () => {
+  try {
+    const currentDate = new Date().toISOString().split("T")[0];
+    const initialTimes = await fetchAPI(currentDate);
+    return initialTimes;
+  } catch (error) {
+    console.error("Error initializing times:", error);
+    return []; // Return an empty array in case of error
+  }
+};
+
+export const updateTimes = async (selectedDate) => {
+  try {
+    const times = await fetchAPI(selectedDate);
+    return times;
+  } catch (error) {
+    console.error("Error updating times:", error);
+    return [];
+  }
+};
 
 const Reservations = () => {
+  const navigate = useNavigate();
 
-    const updateTimes=()=>{
-        
+  const handleSubmit = async (event, formInputs) => {
+    event.preventDefault();
+    console.log(formInputs.date);
+    try {
+      const submissionResult = await submitAPI(formInputs);
+      if (submissionResult === true) {
+        console.log("Form submitted successfully:", formInputs);
+        navigate("/booking-confirmed");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
     }
+  };
+  //reducer - whatever comes out of it, becomes the new state, regardless what the state is named
 
-    const [availableTimes, setAvailableTimes] = useState([
-        "17:00", "18:00", "19:00", "20:00", "21:00", "22:00"
-    ]);
-    
-    return (
+  const reducer = (state, action) => {
+    // reducer should be the updateTimes function
+    if (action.type === "updateTimes") {
+      return updateTimes(action.selectedDate);
+    } else {
+      return state;
+    }
+  };
+
+  const [initialTimes, dispatch] = useReducer(reducer, initializeTimes());
+  // reducer should have availabletimes, dispatch, avaibaetimes shoulf be init with initializeTimes
+  //updateTimes will change the availableTimes based on the selected date.
+
+  return (
     <>
-    <h1>Little Lemon Reserve-a-Table</h1>
-    <BookingForm availableTimes={availableTimes} setAvailableTimes={setAvailableTimes}/>
+      <section id="reservations">
+        <h1>Little Lemon Reserve-a-Table</h1>
+        <BookingForm
+          initialTimesPromise={initialTimes}
+          handleSubmit={handleSubmit}
+          updateTimes={updateTimes}
+        />
+      </section>
     </>
-
-)}
+  );
+};
 
 export default Reservations;
