@@ -272,3 +272,28 @@ form {
 #reservations {
   margin: 2vw 30vw;
 }
+
+input:focus {
+  outline: 0;
+}
+
+input:focus:invalid {
+  outline: solid red;
+}
+
+select:focus:invalid {
+  outline: solid red;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

@@ -10,7 +10,7 @@ export const initializeTimes = async () => {
     return initialTimes;
   } catch (error) {
     console.error("Error initializing times:", error);
-    return []; // Return an empty array in case of error
+    return [];
   }
 };
 
@@ -29,7 +29,6 @@ const Reservations = () => {
 
   const handleSubmit = async (event, formInputs) => {
     event.preventDefault();
-    console.log(formInputs.date);
     try {
       const submissionResult = await submitAPI(formInputs);
       if (submissionResult === true) {
